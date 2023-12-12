@@ -2,7 +2,6 @@ import {
   GetToppingsDocument,
   ToppingFragmentFragment,
 } from "@/graphql-client/generated";
-import { Topping } from "@prisma/client";
 import { useQuery } from "urql";
 
 export const useToppings = () => {

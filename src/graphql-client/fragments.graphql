@@ -2,3 +2,18 @@ fragment ToppingFragment on Topping {
   id
   name
 }
+
+fragment PizzaFragment on Pizza {
+  id
+  name
+  pizzaTopping {
+    ...PizzaToppingFragment
+  }
+}
+
+fragment PizzaToppingFragment on PizzaTopping {
+  id
+  topping {
+    ...ToppingFragment
+  }
+}

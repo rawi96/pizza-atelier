@@ -12,24 +12,26 @@ datasource db {
 }
 
 model Pizza {
-  id       String    @id @default(cuid())
-  name     String
-  toppings Topping[]
+  id           String         @id @default(cuid())
+  name         String
+  pizzaTopping PizzaTopping[]
 
   @@map("pizza")
 }
 
 model Topping {
-  id     String  @id @default(cuid())
-  name   String
-  pizzas Pizza[]
+  id           String         @id @default(cuid())
+  name         String
+  pizzaTopping PizzaTopping[]
 
   @@map("topping")
 }
 
 model PizzaTopping {
-  id        String @id @default(cuid())
+  id        String  @id @default(cuid())
+  pizza     Pizza   @relation(fields: [pizzaId], references: [id])
   pizzaId   String
+  topping   Topping @relation(fields: [toppingId], references: [id])
   toppingId String
 
   @@map("pizza_topping")

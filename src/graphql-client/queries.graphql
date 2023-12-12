@@ -3,3 +3,10 @@ query GetToppings {
     ...ToppingFragment
   }
 }
+
+query GetPizzas {
+  pizzas {
+    id
+    ...PizzaFragment
+  }
+}

@@ -6,8 +6,8 @@ type Props = {
 };
 
 const navigation = [
-  { name: "Konfigurator", href: "/" },
-  { name: "Pizzas", href: "/pizzas" },
+  { name: "Erfind dini Pizza", href: "/" },
+  { name: "Alli Pizzas", href: "/pizzas" },
 ];
 
 export const ApplicationShell: FC<Props> = ({ children }) => (
