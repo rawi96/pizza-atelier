@@ -4,7 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-.yarn/install-state.gz
 
 # testing
 /coverage
@@ -34,3 +33,31 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# terraform
+**/.terraform
+
+# service worker
+public/workbox-*.js
+public/workbox-*.js.map
+public/sw.js
+public/sw.js.map
+
+# testing
+/test-results/
+/playwright-report/
+/playwright/.cache/
+playwright/.auth/user.json
+playwright/.auth/admin.json
+
+# env
+.env
+
+# prisma generated files
+/prisma/postgresql/schema.prisma
+
+# generated types
+*.typegen.ts
+
+# vscode
+.vscode
