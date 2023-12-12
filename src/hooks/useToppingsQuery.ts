@@ -4,7 +4,7 @@ import {
 } from "@/graphql-client/generated";
 import { useQuery } from "urql";
 
-export const useToppings = () => {
+export const useToppingsQuery = () => {
   const [{ fetching: isLoading, data }] = useQuery({
     query: GetToppingsDocument,
   });

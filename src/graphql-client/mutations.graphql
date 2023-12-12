@@ -1,0 +1,5 @@
+mutation AddPizza($data: addPizzaArgs!) {
+  addPizza(data: $data) {
+    ...PizzaFragment
+  }
+}

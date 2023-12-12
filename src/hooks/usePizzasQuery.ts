@@ -1,10 +1,10 @@
 import {
   GetPizzasDocument,
-  PizzaFragmentFragment
+  PizzaFragmentFragment,
 } from "@/graphql-client/generated";
 import { useQuery } from "urql";
 
-export const usePizzas = () => {
+export const usePizzasQuery = () => {
   const [{ fetching: isLoading, data }] = useQuery({
     query: GetPizzasDocument,
   });
