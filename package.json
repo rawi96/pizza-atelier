@@ -3,20 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "npm run db:generate-client && npm run db:apply-migrations && next dev",
+    "build": "npm run db:generate-client && next build",
+    "start": "npm run db:apply-migrations && next start",
+    "lint": "next lint",
+    "db:generate-client": "prisma generate",
+    "db:generate-migration": "prisma migrate dev",
+    "db:apply-migrations": "prisma migrate deploy",
+    "graphql:codegen": "graphql-codegen"
   },
   "dependencies": {
+    "@graphql-yoga/node": "^3.9.1",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@pothos/core": "^3.40.0",
+    "@pothos/plugin-prisma": "^3.62.0",
+    "@prisma/client": "^5.7.0",
     "@tailwindcss/forms": "^0.5.7",
+    "cuid": "^3.0.0",
+    "graphql": "^16.8.1",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "urql": "^4.0.6"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typed-document-node": "^5.0.1",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -24,7 +40,12 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
+    "prisma": "^5.7.0",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }

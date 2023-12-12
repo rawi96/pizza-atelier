@@ -1,0 +1,4 @@
+fragment ToppingFragment on Topping {
+  id
+  name
+}

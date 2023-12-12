@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "pizza_topping" ALTER COLUMN "pizzaId" SET DATA TYPE TEXT,
+ALTER COLUMN "toppingId" SET DATA TYPE TEXT;

@@ -18,15 +18,13 @@ export const CheckboxGroup: FC<CheckboxProps> = ({ items }) => (
 type CheckboxItemProps = {
   id: string;
   label: string;
-  description: string;
 };
 
-const CheckboxItem: FC<CheckboxItemProps> = ({ id, label, description }) => (
+const CheckboxItem: FC<CheckboxItemProps> = ({ id, label }) => (
   <div className="relative flex items-start">
     <div className="flex h-6 items-center">
       <input
         id={id}
-        aria-describedby={`${id}-description`}
         name={id}
         type="checkbox"
         className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
@@ -36,9 +34,6 @@ const CheckboxItem: FC<CheckboxItemProps> = ({ id, label, description }) => (
       <label htmlFor={id} className="font-medium text-gray-900">
         {label}
       </label>
-      <p id={`${id}-description`} className="text-gray-500">
-        {description}
-      </p>
     </div>
   </div>
 );

@@ -1,0 +1,5 @@
+query GetToppings {
+  toppings {
+    ...ToppingFragment
+  }
+}

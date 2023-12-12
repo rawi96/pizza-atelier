@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator pothos {
+  provider = "prisma-pothos-types"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+}
+
+model Pizza {
+  id       String    @id @default(cuid())
+  name     String
+  toppings Topping[]
+
+  @@map("pizza")
+}
+
+model Topping {
+  id     String  @id @default(cuid())
+  name   String
+  pizzas Pizza[]
+
+  @@map("topping")
+}
+
+model PizzaTopping {
+  id        String @id @default(cuid())
+  pizzaId   String
+  toppingId String
+
+  @@map("pizza_topping")
+}

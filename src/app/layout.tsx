@@ -1,4 +1,5 @@
 import { ApplicationShell } from "@/components/application-shell";
+import { UrqlProvider } from "@/providers/urql-provider";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html className="h-full bg-gray-100" lang="en">
       <body className="h-full">
-        <ApplicationShell>{children}</ApplicationShell>
+        <UrqlProvider>
+          <ApplicationShell>{children}</ApplicationShell>
+        </UrqlProvider>
       </body>
     </html>
   );
