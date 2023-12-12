@@ -6,11 +6,12 @@
     "dev": "npm run db:generate-client && npm run db:apply-migrations && next dev",
     "build": "npm run db:generate-client && next build",
     "start": "npm run db:apply-migrations && next start",
-    "vercel-build": "npm run db:generate-client && npm run db:apply-migrations && next build",
+    "vercel-build": "npm run db:generate-client && npm run db:apply-migrations && npm run db:seed && next build",
     "db:prisma:generate": "npm run db:generate-client",
     "db:generate-client": "prisma generate",
     "db:generate-migration": "prisma migrate dev",
     "db:apply-migrations": "prisma migrate deploy",
+    "db:seed": "npx prisma db seed",
     "graphql:codegen": "graphql-codegen"
   },
   "dependencies": {
