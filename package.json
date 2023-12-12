@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "npm run db:generate-client && npm run db:apply-migrations && next dev",
     "build": "npm run db:generate-client && next build",
-    "postinstall": "npm run db:generate-client",
     "start": "npm run db:apply-migrations && next start",
-    "lint": "next lint",
+    "vercel-build": "npm run db:generate-client && npm run db:apply-migrations && next build",
+    "db:prisma:generate": "npm run db:generate-client",
     "db:generate-client": "prisma generate",
     "db:generate-migration": "prisma migrate dev",
     "db:apply-migrations": "prisma migrate deploy",
